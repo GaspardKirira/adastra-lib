@@ -17,8 +17,13 @@ help:
 
 commit:
 	git checkout $(BRANCH_DEV)
-	git add .
-	git commit -m "🚀 Update: commit automatique via Makefile"
+	@if [ -n "$$(git status --porcelain)" ]; then \
+		echo "📝 Committing changes..."; \
+		git add .; \
+		git commit -m "🚀 Update: commit automatique via Makefile"; \
+	else \
+		echo "✅ Aucun changement à committer."; \
+	fi
 
 push:
 	git push origin $(BRANCH_DEV)
