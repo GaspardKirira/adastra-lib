@@ -30,7 +30,7 @@ push:
 
 merge:
 	git checkout $(BRANCH_MAIN)
-	git merge --no-ff $(BRANCH_DEV)
+	git merge --no-ff --no-edit $(BRANCH_DEV)
 	git push origin $(BRANCH_MAIN)
 
 tag:
