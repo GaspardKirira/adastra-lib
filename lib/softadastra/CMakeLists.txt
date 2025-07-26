@@ -1,23 +1,23 @@
 # ────────────────────────────────────────────────────────────────
-# 📦 Compilation de la bibliothèque Softadastra
+# 📦 Softadastra Library Compilation
 # ────────────────────────────────────────────────────────────────
 
-# 🔍 Recherche tous les fichiers .cpp dans tous les modules
+# 🔍 Find all .cpp files within all submodules
 file(GLOB_RECURSE SOFTADASTRA_SOURCES CONFIGURE_DEPENDS *.cpp)
 
-# 📦 Crée une bibliothèque statique unique `softadastra`
+# 📦 Create a single static library named `softadastra`
 add_library(softadastra STATIC ${SOFTADASTRA_SOURCES})
 
-# 📥 Headers publics accessibles avec <softadastra/...>
+# 📥 Public headers accessible with <softadastra/...>
 target_include_directories(softadastra PUBLIC
     ${CMAKE_SOURCE_DIR}/include
 )
 
-# 🔗 Dépendances nécessaires
+# 🔗 Required dependencies
 target_link_libraries(softadastra PUBLIC
-    adastra             # dépend de la lib de base
+    adastra             # depends on the base library
     Threads::Threads
 )
 
-# 🧱 Standard C++17
+# 🧱 Use C++17 standard
 target_compile_features(softadastra PUBLIC cxx_std_17)

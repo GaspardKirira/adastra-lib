@@ -1,21 +1,21 @@
 #!/bin/bash
 
-echo "🧪 Compilation en mode DÉVELOPPEMENT..."
+echo "🧪 Building in DEVELOPMENT mode..."
 
-# Crée un dossier de build propre
+# Clean and create fresh build directory
 rm -rf build
 mkdir build && cd build
 
-# Configure CMake avec les options de dev (avec tests)
+# Configure CMake with development flags (with tests)
 cmake .. \
     -DCMAKE_BUILD_TYPE=Debug \
     -DBUILD_TESTS=ON
 
-# Compile en parallèle
+# Compile using all CPU cores
 make -j$(nproc)
 
-echo "✅ Build développement terminé. Binaire dans ./bin/"
+echo "✅ Development build complete. Binaries are in ./bin/"
 
-# (Optionnel) Lancer les tests automatiquement
-echo "🔍 Lancement des tests..."
+# (Optional) Run tests automatically
+echo "🔍 Running tests..."
 ctest --output-on-failure

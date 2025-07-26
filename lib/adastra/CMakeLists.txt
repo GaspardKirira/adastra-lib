@@ -1,8 +1,8 @@
 # ────────────────────────────────────────────────────────────────
-# 📦 Compilation de la bibliothèque Adastra
+# 📦 Compilation of the Adastra library
 # ────────────────────────────────────────────────────────────────
 
-# 🔹 Ajouter les sous-modules de adastra
+# 🔹 Add submodules of adastra
 add_subdirectory(tools)
 add_subdirectory(utils)
 add_subdirectory(crypto)
@@ -11,12 +11,12 @@ add_subdirectory(storage)
 add_subdirectory(core)
 add_subdirectory(config)
 add_subdirectory(test_utils)
-add_subdirectory(ai) # commenter si inutilisé
+add_subdirectory(ai) # comment out if unused
 
-# 🔹 Créer la bibliothèque statique `adastra` avec un fichier source minimal
+# 🔹 Create the static library `adastra` with a dummy source
 add_library(adastra STATIC dummy.cpp)
 
-# 🔹 Lier tous les sous-modules
+# 🔹 Link all submodules
 target_link_libraries(adastra PUBLIC
     tools
     utils
@@ -32,10 +32,10 @@ target_link_libraries(adastra PUBLIC
     nlohmann_json::nlohmann_json
 )
 
-# 🔹 Inclure les headers
+# 🔹 Include headers
 target_include_directories(adastra PUBLIC
     ${CMAKE_SOURCE_DIR}/include
 )
 
-# 🔹 Activer C++17
+# 🔹 Enable C++17
 target_compile_features(adastra PUBLIC cxx_std_17)

@@ -1,80 +1,80 @@
 # 🛣️ Roadmap — AdastraLib & Softadastra
 
-Ce document définit les grandes étapes de développement pour la bibliothèque C++ `adastra_lib` et son écosystème modulaire `softadastra`.
+This document outlines the development roadmap for the modular C++ library `adastra_lib` and its ecosystem `softadastra`.
 
 ---
 
-## 📌 Objectifs Généraux
+## 📌 General Goals
 
-- [x] Rendre `adastra_lib` totalement indépendante de SoftadastraBox
-- [x] Compiler `adastra` et `softadastra` comme deux bibliothèques distinctes
-- [x] Ajouter les modules initiaux : box, pay, chat, map, commerce
-- [x] Intégrer GoogleTest pour les tests unitaires et d'intégration
-- [x] Ajouter README, NOTES, et structure CMake propre
+- [x] Make `adastra_lib` fully independent from SoftadastraBox
+- [x] Compile `adastra` and `softadastra` as two distinct libraries
+- [x] Add initial modules: box, pay, chat, map, commerce
+- [x] Integrate GoogleTest for unit and integration testing
+- [x] Add README, NOTES, and clean CMake structure
 
 ---
 
-## 🔄 Avancement par Module
+## 🔄 Module Progress
 
 ### 🔹 `adastra`
 
-| Module          | État        | Tests       | Remarques                      |
-| --------------- | ----------- | ----------- | ------------------------------ |
-| utils           | ✅ Fait     | ⏳ À tester | Fonctions string, path, json   |
-| core/algorithms | ✅ Fait     | ✅ En cours | Binary search, mergeSort, etc. |
-| crypto          | ⏳ En cours | ❌ Non fait | SHA256, RSA, AES               |
-| tools           | ✅ Fait     | ❌ Non fait | Logger, IDGenerator            |
-| storage         | ✅ Fait     | ❌ Non fait | Système fichier                |
+| Module          | Status     | Tests      | Notes                          |
+| --------------- | ---------- | ---------- | ------------------------------ |
+| utils           | ✅ Done    | ⏳ To do   | String, path, json helpers     |
+| core/algorithms | ✅ Done    | ✅ Ongoing | Binary search, mergeSort, etc. |
+| crypto          | ⏳ Ongoing | ❌ Not yet | SHA256, RSA, AES               |
+| tools           | ✅ Done    | ❌ Not yet | Logger, IDGenerator            |
+| storage         | ✅ Done    | ❌ Not yet | File system module             |
 
 ### 🔹 `softadastra`
 
-| Module        | État       | Fonction `init()` | Objectif                               |
-| ------------- | ---------- | ----------------- | -------------------------------------- |
-| box           | ✅ OK      | ✅                | Stockage décentralisé                  |
-| pay           | ✅ OK      | ✅                | Paiements (MTN, Airtel, crypto)        |
-| chat          | ✅ OK      | ✅                | Chat en temps réel                     |
-| map           | ✅ OK      | ✅                | Cartographie / localisation            |
-| commerce      | ✅ OK      | ✅                | E-commerce (produits, boutiques, etc.) |
-| rh, ai, forum | ❌ À créer | ❌                | Modules prévus                         |
+| Module        | Status     | `init()` | Purpose                            |
+| ------------- | ---------- | -------- | ---------------------------------- |
+| box           | ✅ Ready   | ✅ Yes   | Decentralized file storage         |
+| pay           | ✅ Ready   | ✅ Yes   | Payments (MTN, Airtel, crypto)     |
+| chat          | ✅ Ready   | ✅ Yes   | Real-time chat system              |
+| map           | ✅ Ready   | ✅ Yes   | Maps and geolocation               |
+| commerce      | ✅ Ready   | ✅ Yes   | E-commerce (products, shops, etc.) |
+| rh, ai, forum | ❌ Planned | ❌ No    | Upcoming modules                   |
 
 ---
 
-## 🧪 Tests & Qualité
+## 🧪 Tests & Quality
 
-- [x] Intégrer GoogleTest
-- [x] Ajouter un test pour `binarySearch`, `countingSort`, `fibonacci`
-- [x] Ajouter un test d'intégration global des modules `softadastra`
-- [ ] Ajouter benchmarks simples (performance/test)
-- [ ] Activer couverture code (GCOV, lcov)
+- [x] GoogleTest integration
+- [x] Add test for `binarySearch`, `countingSort`, `fibonacci`
+- [x] Global integration test for `softadastra` modules
+- [ ] Add basic benchmarks (performance/test)
+- [ ] Enable code coverage (GCOV, lcov)
 
 ---
 
 ## 📖 Documentation
 
-- [ ] Générer la doc Doxygen dans `docs/html/`
-- [ ] Documenter chaque fonction exportée
-- [ ] Créer des exemples pratiques `main.cpp`
+- [ ] Generate Doxygen docs in `docs/html/`
+- [ ] Document every exported function
+- [ ] Create usage examples in `main.cpp`
 
 ---
 
-## 🔐 Sécurité
+## 🔐 Security
 
-- [ ] Vérifier tous les accès mémoire et buffer
-- [ ] Ajouter tests valgrind
-- [ ] Vérifier le bon usage des crypto primitives (si active)
-
----
-
-## 📆 Prochaines Étapes (Semaine en cours)
-
-- [ ] Ajouter modules : `forum`, `rh`, `livechat`
-- [ ] Créer un module `ai` (détection visage ou NLP)
-- [ ] Test unitaire pour `mergeSort()` et `combination()`
-- [ ] Ajouter un système de plugin dynamique pour `softadastra`
+- [ ] Validate memory and buffer access
+- [ ] Add valgrind memory tests
+- [ ] Review crypto primitives usage (if active)
 
 ---
 
-## ✍️ Auteur
+## 📆 Next Steps (Current Week)
 
-Projet par **Softadastra** — 2025  
+- [ ] Add modules: `forum`, `rh`, `livechat`
+- [ ] Create `ai` module (face detection or NLP)
+- [ ] Unit tests for `mergeSort()` and `combination()`
+- [ ] Add dynamic plugin system for `softadastra`
+
+---
+
+## ✍️ Author
+
+Project by **Softadastra** — 2025  
 https://softadastra.com

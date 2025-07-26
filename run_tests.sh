@@ -1,23 +1,23 @@
 #!/bin/bash
 
-echo "🧪 Exécution des tests..."
+echo "🧪 Running tests..."
 
-# Emplacement des exécutables
+# Executable paths
 INTEGRATION="./build/bin/adastra_tests"
 UNIT="./build/bin/adastra_unittests"
 
-# Tests d'intégration
+# Integration tests
 if [ -f "$INTEGRATION" ]; then
-    echo "➡️ Tests d'intégration :"
+    echo "➡️ Running integration tests:"
     $INTEGRATION
 else
-    echo "❌ Fichier non trouvé : $INTEGRATION"
+    echo "❌ File not found: $INTEGRATION"
 fi
 
-# Tests unitaires
+# Unit tests
 if [ -f "$UNIT" ]; then
-    echo "➡️ Tests unitaires :"
+    echo "➡️ Running unit tests:"
     $UNIT
 else
-    echo "❌ Fichier non trouvé : $UNIT"
+    echo "❌ File not found: $UNIT"
 fi

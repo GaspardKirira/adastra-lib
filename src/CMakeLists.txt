@@ -1,20 +1,20 @@
 # ────────────────────────────────────────────────────────────────
 # 📦 Adastra demo or entrypoint compilation (main.cpp)
-# Ce fichier ne redéfinit pas la bibliothèque `adastra` !
+# This file does NOT redefine the `adastra` library!
 # ────────────────────────────────────────────────────────────────
 
-# 📄 Localisation du main (facultatif)
+# 📄 Path to the main file (optional)
 set(MAIN_FILE ${CMAKE_CURRENT_SOURCE_DIR}/main.cpp)
 
 if(EXISTS ${MAIN_FILE})
     add_executable(adastra_main ${MAIN_FILE})
 
-    # 📥 Headers
+    # 📥 Include headers
     target_include_directories(adastra_main PRIVATE
         ${CMAKE_SOURCE_DIR}/include
     )
 
-    # 🔗 Lien avec les bibliothèques principales
+    # 🔗 Link with core libraries
     target_link_libraries(adastra_main PRIVATE
         adastra
         softadastra
