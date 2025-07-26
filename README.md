@@ -1,82 +1,86 @@
 # 🚀 AdastraLib
 
-**Bibliothèque C++ modulaire** pour construire des systèmes performants, robustes et évolutifs.  
-Elle alimente l’écosystème **Softadastra** : plateforme décentralisée, e-commerce, chat, paiement, stockage P2P et plus.
+**Modular C++ library** designed to build high-performance, robust, and scalable systems.  
+It powers the **Softadastra** ecosystem: decentralized platform, e-commerce, chat, payments, P2P storage, and more.
 
 ---
 
-## 📂 Structure principale
+## 📂 Project Structure
 
 ```
 adastra_lib/
-├── include/           # Fichiers d’en-tête publics (adastra/ et softadastra/)
-├── lib/               # Code source des modules compilables
-├── src/               # Point d’entrée de l’application (main.cpp)
-├── test/              # Tests d’intégration (GoogleTest)
-├── unittests/         # Tests unitaires modulaires
-├── config/, architecture/ → Configs et documentation technique
+├── include/ # Public header files (adastra/ and softadastra/)
+├── lib/ # Source code of modular libraries
+├── src/ # Application entry point (main.cpp)
+├── test/ # Integration tests (GoogleTest)
+├── unittests/ # Modular unit tests
+├── config/, architecture/ → Configuration and technical documentation
 ```
 
 ---
 
-## 🔧 Bibliothèques compilées
+## 🔧 Compiled Libraries
 
-| Nom           | Description                                            |
-| ------------- | ------------------------------------------------------ |
-| `adastra`     | Modules fondamentaux : `utils`, `crypto`, `core`, etc. |
-| `softadastra` | Modules spécifiques à l'écosystème (chat, pay, box, …) |
+| Name          | Description                                       |
+| ------------- | ------------------------------------------------- |
+| `adastra`     | Core modules: `utils`, `crypto`, `core`, etc.     |
+| `softadastra` | Ecosystem-specific modules (chat, pay, box, etc.) |
 
 ---
 
-## ⚙️ Compilation
+## ⚙️ Build Instructions
 
-```bash
-# Étapes de compilation
+# Build steps
+
 mkdir build && cd build
 cmake .. -DBUILD_TESTS=ON
 make
+-DBUILD_TESTS=ON
+make
+
 ```
 
-🔹 Désactiver les tests pour un build production :
+🔹 Disable tests for production build:
 
-```bash
 cmake .. -DBUILD_TESTS=OFF
+
 ```
 
-🔹 Options supplémentaires :
+🔹 Additional options:
 
-- `-DENABLE_OPTIMIZATION=ON` : active `-O3`
-- `-DENABLE_SANITIZERS=ON` : active `-fsanitize`
+-DENABLE_OPTIMIZATION=ON → Enables -O3 optimizations
+
+-DENABLE_SANITIZERS=ON → Enables address/UB sanitizers (-fsanitize)
 
 ---
 
-## 🧪 Lancer les tests
+🧪 Running Tests
 
-```bash
-# Tests unitaires (Catch2 / GoogleTest)
+# Unit tests (Catch2 / GoogleTest)
+
 ./bin/adastra_unittests
 
-# Tests d’intégration (GoogleTest)
+# Integration tests (GoogleTest)
+
 ./bin/adastra_tests
-```
 
 ---
 
 ## 📥 Modules Softadastra inclus
 
-| Module     | Description                       |
-| ---------- | --------------------------------- |
-| `box`      | Stockage décentralisé (P2P)       |
-| `commerce` | Fonctionnalités e-commerce        |
-| `pay`      | Paiement, wallet, sécurité        |
-| `chat`     | Système de messagerie temps réel  |
-| `map`      | Géolocalisation et cartes         |
-| `pme`      | Outils pour petites entreprises   |
-| `rh`       | Gestion des utilisateurs & droits |
+| Module     | Description                      |
+| ---------- | -------------------------------- |
+| `box`      | Decentralized P2P storage        |
+| `commerce` | E-commerce features              |
+| `pay`      | Payment system, wallet, security |
+| `chat`     | Real-time messaging system       |
+| `map`      | Maps and geolocation tools       |
+| `pme`      | Tools for small businesses       |
+| `rh`       | User and permission management   |
 
 ---
 
-## 🧱 Dépendances
+## 🧱 Dependencies
 
 - [nlohmann/json](https://github.com/nlohmann/json)
 - [GoogleTest](https://github.com/google/googletest)
@@ -87,20 +91,23 @@ cmake .. -DBUILD_TESTS=OFF
 
 ## 🔖 Versions
 
-Ce projet suit [Semantic Versioning](https://semver.org/lang/fr/).  
-Consultez le [CHANGELOG.md](./CHANGELOG.md) pour voir l’historique.
+This project follows [Semantic Versioning](https://semver.org/lang/fr/).
+See [CHANGELOG.md](./CHANGELOG.md) pour voir l’historique.
 
 ---
 
-## 🧑‍💻 Auteur
+## 🧑‍💻 Author
 
-**Softadastra**  
-https://softadastra.com  
-© 2025. Tous droits réservés.
+**Softadastra**
+https://softadastra.com
+© 2025. All rights reserved.
 
 ---
 
-## 📄 Licence
+## 📄 License
 
-MIT ou propre à l’écosystème Softadastra (selon choix final).  
-À préciser dans `LICENSE`.
+MIT or Softadastra-specific license (to be defined in LICENSE).
+
+```
+
+```

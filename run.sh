@@ -1,13 +1,13 @@
 #!/bin/bash
 
-# Détermine le chemin du binaire
+# Define the binary path
 BINARY="./build/bin/adastra_main"
 
-# Vérifie si le binaire existe
+# Check if the binary exists
 if [ -f "$BINARY" ]; then
-    echo "🚀 Lancement de adastra_main..."
+    echo "🚀 Launching adastra_main..."
     $BINARY
 else
-    echo "❌ Binaire non trouvé : $BINARY"
-    echo "👉 Compile d'abord avec ./build_prod.sh ou ./build_dev.sh"
+    echo "❌ Binary not found: $BINARY"
+    echo "👉 Please compile first using ./build_prod.sh or ./build_dev.sh"
 fi

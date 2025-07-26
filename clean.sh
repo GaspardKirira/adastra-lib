@@ -1,8 +1,8 @@
 #!/bin/bash
 
-echo "🧹 Nettoyage des fichiers de build..."
+echo "🧹 Cleaning build files..."
 
 rm -rf build
 rm -rf CMakeCache.txt CMakeFiles/ Makefile cmake_install.cmake
 
-echo "✅ Dossier de build supprimé."
+echo "✅ Build directory deleted."

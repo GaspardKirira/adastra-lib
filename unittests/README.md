@@ -1,78 +1,91 @@
-# 🧪 Tests unitaires — `unittests/`
+# 🧪 Unit Tests — `unittests/`
 
-Ce dossier contient les tests unitaires de la bibliothèque `adastra_lib`, organisés par module (`utils`, `crypto`, `tools`, etc.).
+This directory contains unit tests for the `adastra_lib` library, organized by module (`utils`, `crypto`, `tools`, etc.).
 
-## ✅ Objectif
+## ✅ Purpose
 
-Valider automatiquement le bon fonctionnement de chaque composant de la bibliothèque à l’aide de **GoogleTest** (et optionnellement **Catch2**).
+Automatically validate the correct behavior of each library component using **GoogleTest** (and optionally **Catch2**).
 
 ---
 
-## 📦 Dépendances
+## 📦 Dependencies
 
-- [GoogleTest](https://github.com/google/googletest) (automatiquement inclus si `BUILD_TESTS=ON`)
-- [Catch2](https://github.com/catchorg/Catch2) (optionnel, activé si `ENABLE_CATCH2=ON`)
+- [GoogleTest](https://github.com/google/googletest) (automatically included if `BUILD_TESTS=ON`)
+- [Catch2](https://github.com/catchorg/Catch2) (optional, enabled with `ENABLE_CATCH2=ON`)
 
 ---
 
 ## ⚙️ Compilation
 
-Depuis la racine de `adastra_lib`, utilise CMake pour compiler les tests :
+From the root of `adastra_lib`, use CMake to compile the tests:
 
+```bash
 mkdir -p build && cd build
-cmake .. -DBUILD_TESTS=ON -DENABLE_CATCH2=OFF # ou ON si tu veux Catch2
+cmake .. -DBUILD_TESTS=ON -DENABLE_CATCH2=OFF # or ON to enable Catch2
 make
-
 ```
-
-🚀 Exécution des tests
-Une fois compilés, exécute tous les tests avec :
-
-./bin/adastra_unittests
-
-
-```
-
-Ou via CTest (intégré avec CMake) :
 
 ---
 
+## 🚀 Running the tests
+
+After compilation, run all tests with:
+
+```bash
+./bin/adastra_unittests
+```
+
+Or with CTest (integrated with CMake):
+
+```bash
 ctest --output-on-failure
+```
 
-🧩 Ajouter un test
-Crée un nouveau fichier dans unittests/<module>/, par exemple :
+---
 
-Exemple minimal avec GoogleTest :
+## 🧩 Adding a Test
 
+Create a new file in `unittests/<module>/`, for example:
+
+Minimal example with GoogleTest:
+
+```cpp
 #include <gtest/gtest.h>
-#include <adastra/utils/string/CaseConverter.hpp> // Exemple fictif
+#include <adastra/utils/string/CaseConverter.hpp> // Example
 
 TEST(StringUtils, ToUppercase) {
-std::string input = "softadastra";
-std::string result = adastra::to_upper(input);
-EXPECT_EQ(result, "SOFTADASTRA");
+    std::string input = "softadastra";
+    std::string result = adastra::to_upper(input);
+    EXPECT_EQ(result, "SOFTADASTRA");
 }
+```
 
-Le fichier sera automatiquement détecté et intégré par CMake (grâce au file(GLOB_RECURSE)).
-
-🗂 Structure recommandée
-
-unittests/
-├── utils/
-│ └── test_string.cpp
-├── crypto/
-│ └── test_hash.cpp
-├── tools/
-│ └── test_logger.cpp
-
-📌 Remarques
-Chaque test doit être isolé, clair, et réutilisable.
-
-Tu peux mélanger des tests GoogleTest et Catch2 (si ENABLE_CATCH2=ON), mais il est recommandé d'utiliser un seul framework par test.
-
-Le binaire généré est bin/adastra_unittests.
+The file will automatically be detected and compiled by CMake (via `file(GLOB_RECURSE)`).
 
 ---
 
-📞 Besoin d'aide ?
-Contacte l'équipe du projet ou consulte la documentation dans docs/ (à venir).
+## 🗂 Recommended Structure
+
+```
+unittests/
+├── utils/
+│   └── test_string.cpp
+├── crypto/
+│   └── test_hash.cpp
+├── tools/
+│   └── test_logger.cpp
+```
+
+---
+
+## 📌 Notes
+
+- Each test must be isolated, clear, and reusable.
+- You can mix GoogleTest and Catch2 tests (if `ENABLE_CATCH2=ON`), but prefer a single framework per test file.
+- The generated binary is `bin/adastra_unittests`.
+
+---
+
+## 📞 Need Help?
+
+Contact the project team or check documentation in `docs/` (coming soon).

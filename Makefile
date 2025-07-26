@@ -1,4 +1,4 @@
-# Fichier : Makefile
+# File: Makefile
 
 VERSION ?= v0.1.0
 BRANCH_DEV = dev
@@ -7,22 +7,22 @@ BRANCH_MAIN = main
 .PHONY: help release commit push merge tag test
 
 help:
-	@echo "Commandes disponibles :"
-	@echo "  make commit        - Ajouter et commiter tous les fichiers (dev)"
-	@echo "  make push          - Pousser la branche dev"
-	@echo "  make merge         - Fusionner dev -> main"
-	@echo "  make tag VERSION=vX.Y.Z - Créer un tag git (par défaut: $(VERSION))"
-	@echo "  make release VERSION=vX.Y.Z - Commit + Push + Merge + Tag"
-	@echo "  make test          - Compiler et exécuter les tests"
+	@echo "Available commands:"
+	@echo "  make commit               - Add and commit all files (on dev branch)"
+	@echo "  make push                 - Push the dev branch"
+	@echo "  make merge                - Merge dev into main"
+	@echo "  make tag VERSION=vX.Y.Z  - Create a Git tag (default: $(VERSION))"
+	@echo "  make release VERSION=vX.Y.Z - Full release: commit + push + merge + tag"
+	@echo "  make test                 - Compile and run tests"
 
 commit:
 	git checkout $(BRANCH_DEV)
 	@if [ -n "$$(git status --porcelain)" ]; then \
 		echo "📝 Committing changes..."; \
 		git add .; \
-		git commit -m "🚀 Update: commit automatique via Makefile"; \
+		git commit -m "🚀 Update: automated commit via Makefile"; \
 	else \
-		echo "✅ Aucun changement à committer."; \
+		echo "✅ Nothing to commit."; \
 	fi
 
 push:

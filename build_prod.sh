@@ -1,18 +1,18 @@
 #!/bin/bash
 
-echo "🚀 Compilation en mode PRODUCTION..."
+echo "🚀 Building in PRODUCTION mode..."
 
-# Crée un dossier de build propre
+# Clean and create fresh build directory
 rm -rf build
 mkdir build && cd build
 
-# Configure CMake avec les options de production
+# Configure CMake with production flags
 cmake .. \
     -DCMAKE_BUILD_TYPE=Release \
     -DBUILD_TESTS=OFF \
     -DENABLE_OPTIMIZATION=ON
 
-# Compile en parallèle
+# Compile using all CPU cores
 make -j$(nproc)
 
-echo "✅ Build production terminé. Binaire dans ./bin/"
+echo "✅ Production build complete. Binary available in ./bin/"
